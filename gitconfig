@@ -1,0 +1,30 @@
+[user]
+	name = Robert Kluin
+	email = robert.kluin@ezoxsystems.com
+
+[core]
+	excludesfile = /Users/bobert/.gitignore_global
+    autocrlf = input
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[alias]
+  st = status
+  di = diff
+  co = checkout
+  ci = commit
+  br = branch
+  sta = stash
+  an = annotate
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
