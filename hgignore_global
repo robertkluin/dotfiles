@@ -5,4 +5,5 @@ syntax: glob
 *.swp
 *.swo
 *.pyc
+*.orig
 
