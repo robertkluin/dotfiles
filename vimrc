@@ -56,6 +56,9 @@ map <leader><cr> :noh<cr>
 " toggle current column highlight shortcut
 map <leader>c :set cursorcolumn!<cr>
 
+" toggle between relative and absolute line numbers.
+map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
+
 color desert
 
 " filetype being on breaks pathogen
@@ -80,6 +83,8 @@ nnoremap <leader>l :TagbarToggle<CR>
 " pep8 shortcut
 nnoremap <leader>8 :call Pep8()<CR>
 
+" let g:pyflakes_use_quickfix = 0
+
 " Remove trailing white-space from python files.
 autocmd BufWritePre *.py :%s/\s\+$//e
 
@@ -91,3 +96,31 @@ let g:dbext_default_dbname = '@askkb'
 let g:dbext_default_SQLSRV_bin = '/Users/bobert/tmp/pdb-test/sql-sendfile.py'
 let g:dbext_default_SQLSRV_cmd_options = ' '
 let g:dbext_default_SQLSRV_cmd_terminator = ' '
+
+
+
+let g:pygrepprg="grepp\\ -n"
+
+function! PyGrep(args)
+    let g:pyflakes_use_quickfix = 0
+    let grepprg_bak=&grepprg
+    exec "set grepprg=" . g:pygrepprg
+    execute "silent! grep " . a:args
+    botright copen
+    let &grepprg=grepprg_bak
+    exec "redraw!"
+    let g:pyflakes_use_quickfix = 1
+endfunction
+
+command! -nargs=* -complete=file G call PyGrep(<q-args>)
+
+function! RunFile()
+    let g:fileName = expand("%:p")
+    botright new
+    setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+    execute "$r!python2.5\ /Users/bobert/MyApps/WebFilings/developer-scripts/tools/py/code_runner_helper.py\ " . g:fileName
+    setlocal nomodifiable
+endfunction
+
+command! -nargs=* -complete=file RC call RunFile()
+
