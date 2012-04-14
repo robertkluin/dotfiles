@@ -23,6 +23,8 @@ set wildmenu
 
 set history=1000
 
+set mouse=a
+
 let python_highlight_all=1
 
 " Make shell commands run like they normally would
