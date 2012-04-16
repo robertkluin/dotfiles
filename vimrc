@@ -92,6 +92,10 @@ nnoremap <leader>8 :call Pep8()<CR>
 " Remove trailing white-space from python files.
 autocmd BufWritePre *.py :%s/\s\+$//e
 
+" Syntax highlighting for flex.
+autocmd BufRead *.as set filetype=actionscript
+autocmd BufRead *.mxml set filetype=mxml
+
 " Some stuff for dbext.
 let g:dbext_default_type = 'SQLSRV'
 let g:dbext_default_user = 'sa'
