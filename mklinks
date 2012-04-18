@@ -7,6 +7,8 @@ sudo ln -sf ~/.dotfiles/sys_bashrc /etc/bashrc
 # Setup vim
 ln -sf {~/.dotfiles/,~/.}vimrc
 ln -sf {~/.dotfiles/,~/.}gvimrc
+mkdir -p ~/.vim/colors
+ln -sf {~/.dotfiles/,~/.}vim/colors/desert256.vim
 
 # Setup screen
 sudo ln -sf ~/.dotfiles/sys_screenrc /etc/screenrc
