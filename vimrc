@@ -6,6 +6,8 @@ set nocompatible
 
 set hidden
 
+set backspace=2
+
 set tabstop=4
 set expandtab
 set shiftwidth=4
@@ -61,7 +63,8 @@ map <leader>c :set cursorcolumn!<cr>
 " toggle between relative and absolute line numbers.
 map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
 
-color desert
+colorscheme desert256
+set t_Co=256
 
 " filetype being on breaks pathogen
 filetype on
@@ -87,6 +90,13 @@ nnoremap <leader>l :TagbarToggle<CR>
 nnoremap <leader>8 :call Pep8()<CR>
 
 " let g:pyflakes_use_quickfix = 0
+
+" mako syntax highlighting
+autocmd BufRead *.mako set filetype=mako
+
+" Flex syntax highlighting
+autocmd BufRead *.as set filetype=actionscript
+autocmd BufRead *.mxml set filetype=mxml
 
 " Remove trailing white-space from python files.
 autocmd BufWritePre *.py :%s/\s\+$//e
