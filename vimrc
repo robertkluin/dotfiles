@@ -69,8 +69,9 @@ set t_Co=256
 set cursorline
 set colorcolumn=80
 
-" filetype being on breaks pathogen
+" set filetype on so we don't return a non-zero exit code due to the next line.
 filetype on
+" filetype being on breaks pathogen
 filetype off
 
 " startup pathogen
