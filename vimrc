@@ -66,6 +66,9 @@ map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
 colorscheme desert256
 set t_Co=256
 
+set cursorline
+set colorcolumn=80
+
 " filetype being on breaks pathogen
 filetype on
 filetype off
