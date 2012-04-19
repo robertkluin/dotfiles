@@ -243,8 +243,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " highlight groups
     call <SID>X("Cursor", "708090", "f0e68c", "")
-    exec "hi CursorLine  cterm=NONE ctermbg=" . <SID>rgb("4d4d4d")
-    exec "hi CursorColumn  cterm=NONE ctermbg=" . <SID>rgb("4d4d4d")
     "CursorIM
     "Directory
     "DiffAdd

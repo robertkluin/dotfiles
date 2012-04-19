@@ -63,12 +63,6 @@ map <leader>c :set cursorcolumn!<cr>
 " toggle between relative and absolute line numbers.
 map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
 
-colorscheme desert256
-set t_Co=256
-
-set cursorline
-set colorcolumn=80
-
 " set filetype on so we don't return a non-zero exit code due to the next line.
 filetype on
 " filetype being on breaks pathogen
@@ -104,6 +98,23 @@ autocmd BufRead *.mxml set filetype=mxml
 
 " Remove trailing white-space from python files.
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+
+" Setup some color stuff.
+colorscheme desert256
+set t_Co=256
+
+set cursorline
+set colorcolumn=80
+
+hi Normal guibg=#cccccc ctermbg=234
+
+" highlight groups
+hi CursorLine  cterm=NONE ctermbg=236
+hi CursorColumn  cterm=NONE ctermbg=236
+hi ColorColumn  cterm=NONE ctermbg=232
+
+
 
 " Some stuff for dbext.
 let g:dbext_default_type = 'SQLSRV'
