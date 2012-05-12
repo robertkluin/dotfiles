@@ -20,6 +20,9 @@
   sta = stash
   an = annotate
 
+[push]
+    default = current
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
