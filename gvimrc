@@ -1,3 +1,6 @@
+
+set background=dark
+
 " Highlight current cursor line and col 80.
 set cursorline
 set colorcolumn=80
