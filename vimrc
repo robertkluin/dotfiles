@@ -18,7 +18,7 @@ set number
 
 set hlsearch
 
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
 
 set wildmode=longest:full
 set wildmenu
@@ -115,13 +115,15 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 
 " Setup some color stuff.
-colorscheme desert256
+set background=dark
 set t_Co=256
+colorscheme desert256
 
 set cursorline
 set colorcolumn=80
 
 hi Normal guibg=#cccccc ctermbg=234
+hi NonText guibg=#cccccc ctermbg=234
 
 " highlight groups
 hi CursorLine  cterm=NONE ctermbg=236

@@ -11,3 +11,4 @@ set gfn=Menlo\ Regular:h12
 " No menubar.
 set guioptions-=T
 
+set background=dark
