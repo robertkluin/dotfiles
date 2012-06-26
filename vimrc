@@ -63,6 +63,9 @@ map <leader>c :set cursorcolumn!<cr>
 " toggle between relative and absolute line numbers.
 map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
 
+" insert wd of current file.
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 " set filetype on so we don't return a non-zero exit code due to the next line.
 filetype on
 " filetype being on breaks pathogen
@@ -91,6 +94,17 @@ nnoremap <leader>8 :call Pep8()<CR>
 
 " mako syntax highlighting
 autocmd BufRead *.mako set filetype=mako
+autocmd FileType mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" jinja syntax highlighting
+autocmd BufRead *.jinja set filetype=html
+autocmd FileType jinja setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" html indent
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" jst syntax highlighting
+autocmd BufRead *.jst set filetype=html
 
 " Flex syntax highlighting
 autocmd BufRead *.as set filetype=actionscript
@@ -125,6 +139,44 @@ let g:dbext_default_SQLSRV_bin = '/Users/bobert/tmp/pdb-test/sql-sendfile.py'
 let g:dbext_default_SQLSRV_cmd_options = ' '
 let g:dbext_default_SQLSRV_cmd_terminator = ' '
 
+" Better buffer explorer.
+nnoremap <C-t> :buffers<CR>:buffer<space>
+
+" Make netrw usable as a file explorer
+" Use a tre view
+let g:netrw_liststyle = 3
+" <cr> opens in last buffer
+let g:netrw_browse_split = 4
+" Vertical splits ftw
+let g:netrw_preview = 1
+let g:netrw_altv = 1
+" Default new window size
+let g:netrw_winsize = 10
+" Drop the BS up top.
+let g:netrw_banner = 0
+
+function! ToggleExplorer()
+    if exists("t:explorer_buffer_num")
+        let explorer_window_num = bufwinnr(t:explorer_buffer_num)
+        if explorer_window_num != -1
+            let current_window_num = winnr()
+            exec explorer_window_num . 'wincmd w'
+            close
+            exec current_window_num . 'wincmd w'
+        endif
+        unlet t:explorer_buffer_num
+    else
+        " goto left window
+        exec '1wincmd w'
+        Vexplore
+        exec 'silent vertical resize 30'
+        exec 'set winfixwidth'
+        let t:explorer_buffer_num = bufnr("%")
+    endif
+endfunction
+
+" nnoremap <leader>f :call ToggleExplorer()<CR>
+
 
 
 let g:pygrepprg="grepp\\ -n"
@@ -151,4 +203,19 @@ function! RunFile()
 endfunction
 
 command! -nargs=* -complete=file RC call RunFile()
+
+function ScrollToPercent(percent)
+    let movelines=winheight(0)*a:percent/100
+
+    if has("float") && type(movelines) == type(0.0)
+        let movelines=float2nr(movelines)
+    endif
+
+    let oldso=&so
+    execute ":set so=" . movelines
+    execute "normal! zt"
+    execute ":set so=" . oldso
+endfunction
+
+nnoremap za :<C-u>call ScrollToPercent(20)<cr>
 
