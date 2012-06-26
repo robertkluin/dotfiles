@@ -1,6 +1,3 @@
-
-set background=dark
-
 " Highlight current cursor line and col 80.
 set cursorline
 set colorcolumn=80
@@ -11,4 +8,6 @@ set gfn=Menlo\ Regular:h12
 " No menubar.
 set guioptions-=T
 
+" Make gvim usable.
 set background=dark
+
