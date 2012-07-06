@@ -6,13 +6,14 @@ sudo ln -sf ~/.dotfiles/sys_bashrc /etc/bashrc
 
 # Setup keys
 sudo ln -sf ~/.dotfiles/sys_inputrc /etc/inputrc
-ln -sf DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+mkdir -p ~/Library/KeyBindings/
+ln -sf ~/.dotfiles/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
 
 # Setup vim
+mkdir -p ~/.vim
 ln -sf {~/.dotfiles/,~/.}vimrc
 ln -sf {~/.dotfiles/,~/.}gvimrc
-mkdir -p ~/.vim/colors
-ln -sf {~/.dotfiles/,~/.}vim/colors/desert256.vim
+ln -sf ~/.dotfiles/vim/* ~/.vim/
 
 # Setup screen
 sudo ln -sf ~/.dotfiles/sys_screenrc /etc/screenrc
