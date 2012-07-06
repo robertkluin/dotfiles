@@ -4,6 +4,10 @@
 ln -sf {~/.dotfiles/,~/.}bashrc
 sudo ln -sf ~/.dotfiles/sys_bashrc /etc/bashrc
 
+# Setup keys
+sudo ln -sf ~/.dotfiles/sys_inputrc /etc/inputrc
+ln -sf DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+
 # Setup vim
 ln -sf {~/.dotfiles/,~/.}vimrc
 ln -sf {~/.dotfiles/,~/.}gvimrc
