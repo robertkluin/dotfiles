@@ -13,7 +13,7 @@ bookmarks =
 rebase = 
 mq = 
 #mksqlscript = ~/.hgext/mksqlscript/mksqlscript.py
-hgsubversion = ~/.hgext/hgsubversion/hgsubversion
+#hgsubversion = ~/.hgext/hgsubversion/hgsubversion
 
 [web]
 cacerts = /etc/hg-dummy-cert.pem
