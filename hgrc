@@ -1,5 +1,6 @@
 [ui]
-username=Robert Kluin <robert.kluin@ezoxsystems.com>
+username = Robert Kluin <robert.kluin@ezoxsystems.com>
+editor = vim
 
 ignore=~/.hgignore_global
 

@@ -5,6 +5,10 @@
 [core]
 	excludesfile = /Users/bobert/.gitignore_global
     autocrlf = input
+    editor = vim
+
+[merge]
+    tool = vim
 
 [color]
     diff = auto
