@@ -63,6 +63,8 @@ map <leader>c :set cursorcolumn!<cr>
 " toggle between relative and absolute line numbers.
 map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
 
+map <leader>g :GundoToggle<CR>
+
 " insert wd of current file.
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
@@ -82,6 +84,7 @@ filetype plugin indent on
 " tweak nerd tree
 nnoremap <leader>f :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeWinSize = 21
 
 " Set tagbar option
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
