@@ -2,6 +2,10 @@ if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 function grepp () {
   echo "Grepping for $@"
   grep -R --include="*.py" "$@" * ;
