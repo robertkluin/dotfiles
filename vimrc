@@ -93,10 +93,11 @@ let NERDTreeWinSize = 21
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 nnoremap <leader>l :TagbarToggle<CR>
 
-" pep8 shortcut
-nnoremap <leader>8 :call Pep8()<CR>
-
-" let g:pyflakes_use_quickfix = 0
+" Flake8 setup and shortcut
+let g:syntastic_python_checker_args='--ignore=W391'
+nnoremap <leader>s :SyntasticCheck<CR>
+nnoremap zj :lnext<CR>zz
+nnoremap zk :lprev<CR>zz
 
 " mako syntax highlighting
 autocmd BufRead *.mako set filetype=mako
@@ -190,14 +191,12 @@ endfunction
 let g:pygrepprg="grepp\\ -n"
 
 function! PyGrep(args)
-    let g:pyflakes_use_quickfix = 0
     let grepprg_bak=&grepprg
     exec "set grepprg=" . g:pygrepprg
     execute "silent! grep " . a:args
     botright copen
     let &grepprg=grepprg_bak
     exec "redraw!"
-    let g:pyflakes_use_quickfix = 1
 endfunction
 
 command! -nargs=* -complete=file G call PyGrep(<q-args>)
