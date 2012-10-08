@@ -99,16 +99,19 @@ nnoremap <leader>s :SyntasticCheck<CR>
 nnoremap zj :lnext<CR>zz
 nnoremap zk :lprev<CR>zz
 
-" mako syntax highlighting
+" mako syntax highlighting and indent depth
 autocmd BufRead *.mako set filetype=mako
 autocmd FileType mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" jinja syntax highlighting
+" jinja syntax highlighting and indent depth
 autocmd BufRead *.jinja set filetype=html
 autocmd FileType jinja setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" html indent
+" html indent depth
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" js and coffee indent depth
+autocmd FileType coffee,javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " jst syntax highlighting
 autocmd BufRead *.jst set filetype=html
