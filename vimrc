@@ -99,22 +99,17 @@ nnoremap <leader>s :SyntasticCheck<CR>
 nnoremap zj :lnext<CR>zz
 nnoremap zk :lprev<CR>zz
 
-" mako syntax highlighting and indent depth
+" mako syntax highlighting
 autocmd BufRead *.mako set filetype=mako
-autocmd FileType mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" jinja syntax highlighting and indent depth
+" make jinja templates use html syntax highlighting
 autocmd BufRead *.jinja set filetype=html
-autocmd FileType jinja setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" html indent depth
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" js and coffee indent depth
-autocmd FileType coffee,javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" jst syntax highlighting
+" make jst templates use html syntax highlighting
 autocmd BufRead *.jst set filetype=html
+
+" Set html, coffee, and javascript indent depths to 2-space.
+autocmd FileType coffee,html,javascript,mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Flex syntax highlighting
 autocmd BufRead *.as set filetype=actionscript
