@@ -85,9 +85,9 @@ syntax on
 filetype plugin indent on
 
 " tweak nerd tree
-nnoremap <leader>f :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeToggle<CR><C-w>=
 let NERDTreeIgnore = ['\.pyc$']
-let NERDTreeWinSize = 21
+let NERDTreeWinSize = 22
 let NERDTreeMinimalUI = 1
 
 " Set tagbar option
