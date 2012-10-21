@@ -88,6 +88,7 @@ filetype plugin indent on
 nnoremap <leader>f :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeWinSize = 21
+let NERDTreeMinimalUI = 1
 
 " Set tagbar option
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
