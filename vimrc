@@ -65,12 +65,16 @@ map <leader><cr> :noh<cr>
 " Toggle spell mode on/off.
 map <leader>p :set spell!<cr>
 
-" toggle current column highlight shortcut
+" toggle current column highlight shortcut.
 map <leader>c :set cursorcolumn!<cr>
 
 " toggle between relative and absolute line numbers.
 map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
 
+" toggle paste mode.
+map <leader>e :set paste!<CR>
+
+" toggle gundo on/off.
 map <leader>g :GundoToggle<CR>
 
 " insert wd of current file.
