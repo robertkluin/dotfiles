@@ -2,6 +2,7 @@
 
 # Setup bash
 ln -sf {~/.dotfiles/,~/.}bashrc
+ln -sf {~/.dotfiles/,~/.}bash_profile
 sudo ln -sf ~/.dotfiles/sys_bashrc /etc/bashrc
 
 # Setup keys
