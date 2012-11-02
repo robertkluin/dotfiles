@@ -22,7 +22,7 @@
   an = annotate
 
 [push]
-    default = current
+    default = tracking
 
 [merge]
     tool = vimdiff
