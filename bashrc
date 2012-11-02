@@ -3,6 +3,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 alias gae='cd /usr/local/google_appengine/'
+alias mutt='cd ~/Desktop && mutt'
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
