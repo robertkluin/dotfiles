@@ -27,6 +27,11 @@ set history=1000
 
 set mouse=a
 
+let g:pymode_folding=0
+let g:pymode_lint_ignore = "W391"
+let g:pymode_lint = 0
+let g:pymode_lint_cwindow = 0
+
 let python_highlight_all=1
 
 " Make shell commands run like they normally would
