@@ -21,6 +21,15 @@ sudo ln -sf ~/.dotfiles/sys_screenrc /etc/screenrc
 # Setup tmux
 ln -sf {~/.dotfiles/,~/.}tmux.conf
 
+# Setup mutt
+ln -sf {~/.dotfiles/,~/.}mutt
+ln -sf {~/.dotfiles/,~/.}muttrc
+ln -sf {~/.dotfiles/,~/.}offlineimaprc
+ln -sf {~/.dotfiles/,~/.}msmtprc
+
+# Setup urlview
+ln -sf {~/.dotfiles/,~/.}urlview
+
 # Setup git
 ln -sf {~/.dotfiles/,~/.}gitconfig
 ln -sf {~/.dotfiles/,~/.}gitignore_global
