@@ -85,9 +85,17 @@ filetype on
 " filetype being on breaks pathogen
 filetype off
 
-" startup pathogen
-call pathogen#infect()
-call pathogen#helptags()
+" startup vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+Bundle 'sjl/gundo.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'klen/python-mode'
+Bundle 'scrooloose/syntastic'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'jnwhiteh/vim-golang'
 
 " Enable filetype plugins
 syntax on
