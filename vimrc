@@ -109,6 +109,8 @@ Bundle 'klen/python-mode'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 
 " Enable filetype plugins
 syntax on
