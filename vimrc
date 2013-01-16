@@ -151,6 +151,8 @@ autocmd BufRead *.mxml set filetype=mxml
 " Remove trailing white-space from python files.
 autocmd BufWritePre *.py :%s/\s\+$//e
 
+" Turn spellcheck on for gitcommit by default.
+autocmd FileType gitcommit set spell
 
 " Setup some color stuff.
 set background=dark
