@@ -90,6 +90,9 @@ map <leader>e :set paste!<CR>
 " toggle gundo on/off.
 map <leader>g :GundoToggle<CR>
 
+" jump to previous buffer.
+noremap <leader><leader> <C-^>
+
 " insert wd of current file.
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
