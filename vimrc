@@ -47,6 +47,9 @@ let g:pymode_run = 0
 
 let python_highlight_all=1
 
+
+" Fix Y to work like other Caps, such as D.
+nnoremap Y y$
 " Make shell commands run like they normally would
 set shellcmdflag=-ic
 
