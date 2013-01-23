@@ -47,6 +47,9 @@ let g:pymode_run = 0
 
 let python_highlight_all=1
 
+
+" Fix Y to work like other Caps, such as D.
+nnoremap Y y$
 " Make shell commands run like they normally would
 set shellcmdflag=-ic
 
@@ -89,6 +92,9 @@ map <leader>e :set paste!<CR>
 
 " toggle gundo on/off.
 map <leader>g :GundoToggle<CR>
+
+" jump to previous buffer.
+noremap <leader><leader> <C-^>
 
 " insert wd of current file.
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -151,6 +157,8 @@ autocmd BufRead *.mxml set filetype=mxml
 " Remove trailing white-space from python files.
 autocmd BufWritePre *.py :%s/\s\+$//e
 
+" Turn spellcheck on for gitcommit by default.
+autocmd FileType gitcommit set spell
 
 " Setup some color stuff.
 set background=dark
