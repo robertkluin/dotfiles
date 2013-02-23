@@ -1,12 +1,12 @@
 
 # Make awesomeness happen.
-ALL = keys bash vim screen tmux git hg
+ALL = keys-config bash-config vim-config screen-config tmux-config git-config hg-config
 
 # Linux doesn't need a few things that OSX does.
-LINUX = keys-global bash vim screen tmux git hg
+LINUX = keys-global bash-config vim-config screen-config tmux-config git-config hg-config
 
 # Don't put crap in /etc.
-NOGLOBAL = keys-home bash-home vim tmux git hg
+NOGLOBAL = keys-home bash-home vim-config tmux-config git-config hg-config
 
 
 # Where to link stuff from, should be `pwd`, but who knows.
@@ -21,7 +21,7 @@ keys-home:
 	mkdir -p ~/Library/KeyBindings/
 	ln -sf {$(DOTREPO),~/Library/KeyBindings}/DefaultKeyBinding.dict
 
-keys: keys-global keys-home
+keys-config: keys-global keys-home
 
 
 # Bash config.
@@ -32,11 +32,11 @@ bash-home:
 	ln -sf {$(DOTREPO)/,~/.}bashrc
 	ln -sf {$(DOTREPO)/,~/.}bash_profile
 
-bash: bash-global bash-home
+bash-config: bash-global bash-home
 
 
 # Vim.
-vim:
+vim-config:
 	mkdir -p ~/.vim/bundle
 	mkdir -p ~/tmp/vim/{backup,swap,undo}
 	ln -sf {$(DOTREPO)/,~/.}vimrc
@@ -48,20 +48,20 @@ vim:
 screen-global:
 	sudo ln -sf $(DOTREPO)/sys_screenrc /etc/screenrc
 
-screen: screen-global
+screen-config: screen-global
 
 
 # tmu.
-tmux:
+tmux-config:
 	ln -sf {$(DOTREPO)/,~/.}tmux.conf
 
 # git.
-git:
+git-config:
 	ln -sf {$(DOTREPO)/,~/.}gitconfig
 	ln -sf {$(DOTREPO)/,~/.}gitignore_global
 
 # Mercurial.
-hg:
+hg-config:
 	ln -sf {$(DOTREPO)/,~/.}hgignore_global
 	ln -sf {$(DOTREPO)/,~/.}hgrc
 
