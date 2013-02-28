@@ -111,7 +111,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'klen/python-mode'
+Bundle 'robertkluin/python-mode'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jnwhiteh/vim-golang'
