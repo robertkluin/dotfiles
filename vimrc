@@ -1,8 +1,10 @@
 
+set nocompatible
+
 set ruler
 set showcmd
 
-set nocompatible
+set laststatus=2
 
 set hidden
 
