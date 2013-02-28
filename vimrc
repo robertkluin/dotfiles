@@ -146,11 +146,8 @@ nnoremap zk :lprev<CR>zz
 " mako syntax highlighting
 autocmd BufRead *.mako set filetype=mako
 
-" make jinja templates use html syntax highlighting
-autocmd BufRead *.jinja set filetype=html
-
-" make jst templates use html syntax highlighting
-autocmd BufRead *.jst set filetype=html
+" make jinja, jst, and handlebars templates use html syntax highlighting
+autocmd BufRead *.jinja,*.jst,*.handlebars set filetype=html
 
 " Set html, coffee, and javascript indent depths to 2-space.
 autocmd FileType coffee,html,javascript,mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
