@@ -83,7 +83,7 @@ nnoremap ; :
 let mapleader = ","
 
 " cancel highlight shortcut
-map <leader><space> :noh<cr>
+map <leader><cr> :noh<cr>
 
 " Toggle spell mode on/off.
 map <leader>p :set spell!<cr>
