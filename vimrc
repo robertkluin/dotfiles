@@ -25,6 +25,9 @@ set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
 set wildmode=longest:full
 set wildmenu
 
+" Do not search pyc files.
+set wildignore+=*.pyc
+
 set history=1000
 
 set mouse=a
