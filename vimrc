@@ -55,8 +55,10 @@ let python_highlight_all=1
 
 " Fix Y to work like other Caps, such as D.
 nnoremap Y y$
+
 " Make shell commands run like they normally would
-set shellcmdflag=-ic
+" NOTE: This really hoses up vim-fugitive.
+" set shellcmdflag=-ic
 
 " Remap window nav to ctrl-[h,j,k,l]
 nnoremap <C-j> <C-w>j
@@ -122,6 +124,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'git://github.com/tpope/vim-fugitive.git'
 
 " Enable filetype plugins
 syntax on
