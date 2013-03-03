@@ -115,13 +115,14 @@ Bundle 'gmarik/vundle'
 
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'robertkluin/python-mode'
+Bundle 'klen/python-mode'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'git://github.com/tpope/vim-fugitive.git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'robertkluin/vim-handy-highlights.git'
 
 " Enable filetype plugins
 syntax on
