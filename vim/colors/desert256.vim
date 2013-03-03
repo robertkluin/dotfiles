@@ -284,8 +284,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Ignore", "666666", "", "")
     "Error
     call <SID>X("Todo", "ff4500", "eeee00", "")
-    "Info
-    call <SID>X("Info", "dddd00", "0066CC", "")
 
     " delete functions {{{
     delf <SID>X
