@@ -139,7 +139,7 @@ let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 nnoremap <leader>l :TagbarToggle<CR>
 
 " Flake8 setup and shortcut
-let g:syntastic_python_checker_args='--ignore=W391'
+let g:syntastic_python_flake8_args='--ignore=W391'
 nnoremap <leader>s :SyntasticCheck<CR>
 nnoremap zj :lnext<CR>zz
 nnoremap zk :lprev<CR>zz
