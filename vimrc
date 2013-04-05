@@ -268,3 +268,26 @@ endfunction
 
 nnoremap za :<C-u>call ScrollToPercent(20)<cr>
 
+
+
+function ZoomMode(enable)
+    if a:enable
+        " If zoom mode is one, make windows a size usable for coding as we jump
+        " between them.
+        set winwidth=84
+
+        " We have to have a winheight bigger than we want to set winminheight. But
+        " if we set winheight to be huge before winminheight, the winminheight set
+        " will fail.
+        set winheight=15
+        set winminheight=15
+        set winheight=999
+    else
+        " If zoom mode is not on, set resize limits much lower.
+        set winwidth=20
+        set winheight=15
+        set winminheight=1
+        set winheight=1
+    endif
+endfunction
+
