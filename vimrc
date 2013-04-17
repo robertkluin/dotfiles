@@ -204,7 +204,10 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 10
 
 " Drop the BS up top.
+"let g:netrw_banner = 0
 
+" Hide crap that I don't want to see.
+let g:netrw_list_hide= '^\..*$,^.*\.pyc$'
 
 function! ToggleExplorer()
     if exists("t:explorer_buffer_num")
