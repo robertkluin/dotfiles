@@ -129,7 +129,7 @@ syntax on
 filetype plugin indent on
 
 " tweak nerd tree
-nnoremap <leader>f :NERDTreeToggle<CR><C-w>=
+"nnoremap <leader>f :NERDTreeToggle<CR><C-w>=
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeWinSize = 22
 let NERDTreeMinimalUI = 1
@@ -192,15 +192,19 @@ nnoremap <C-t> :buffers<CR>:buffer<space>
 " Make netrw usable as a file explorer
 " Use a tre view
 let g:netrw_liststyle = 3
+
 " <cr> opens in last buffer
 let g:netrw_browse_split = 4
+
 " Vertical splits ftw
 let g:netrw_preview = 1
 let g:netrw_altv = 1
+
 " Default new window size
 let g:netrw_winsize = 10
+
 " Drop the BS up top.
-let g:netrw_banner = 0
+
 
 function! ToggleExplorer()
     if exists("t:explorer_buffer_num")
@@ -222,7 +226,7 @@ function! ToggleExplorer()
     endif
 endfunction
 
-" nnoremap <leader>f :call ToggleExplorer()<CR>
+nnoremap <leader>f :call ToggleExplorer()<CR>
 
 
 
