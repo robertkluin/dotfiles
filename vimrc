@@ -249,7 +249,7 @@ endfunction
 
 command! -nargs=* -complete=file RC call RunFile()
 
-function ScrollToPercent(percent)
+function! ScrollToPercent(percent)
     let movelines=winheight(0)*a:percent/100
 
     if has("float") && type(movelines) == type(0.0)
@@ -266,7 +266,7 @@ nnoremap za :<C-u>call ScrollToPercent(20)<cr>
 
 
 
-function ZoomMode(enable)
+function! ZoomMode(enable)
     if a:enable
         " If zoom mode is one, make windows a size usable for coding as we jump
         " between them.
