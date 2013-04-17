@@ -216,7 +216,7 @@ function! ToggleExplorer()
         " goto left window
         exec '1wincmd w'
         Vexplore
-        exec 'silent vertical resize 30'
+        exec 'silent vertical resize 22'
         exec 'set winfixwidth'
         let t:explorer_buffer_num = bufnr("%")
     endif
