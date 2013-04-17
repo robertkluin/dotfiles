@@ -243,7 +243,7 @@ function! RunFile()
     let g:fileName = expand("%:p")
     botright new
     setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-    execute "$r!python2.5\ /Users/bobert/MyApps/WebFilings/developer-scripts/tools/py/code_runner_helper.py\ " . g:fileName
+    execute "$r!python2.5\ /Users/bobert/code/WebFilings/developer-scripts/tools/py/code_runner_helper.py\ " . g:fileName
     setlocal nomodifiable
 endfunction
 
