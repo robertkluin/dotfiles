@@ -134,10 +134,6 @@ let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeWinSize = 22
 let NERDTreeMinimalUI = 1
 
-" Set tagbar option
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-nnoremap <leader>l :TagbarToggle<CR>
-
 " Flake8 setup and shortcut
 let g:syntastic_python_flake8_args='--ignore=W391'
 nnoremap <leader>s :SyntasticCheck<CR>
