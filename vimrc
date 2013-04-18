@@ -86,7 +86,7 @@ let mapleader = ","
 map <leader><cr> :noh<cr>
 
 " Toggle spell mode on/off.
-map <leader>p :set spell!<cr>
+map <leader>p :set spell!<cr>:set spell?<cr>
 
 " toggle current column highlight shortcut.
 map <leader>c :set cursorcolumn!<cr>
