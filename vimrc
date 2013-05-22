@@ -123,6 +123,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'robertkluin/vim-handy-highlights.git'
+Bundle 'airblade/vim-gitgutter'
 
 " Enable filetype plugins
 syntax on
