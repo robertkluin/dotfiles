@@ -124,6 +124,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'robertkluin/vim-handy-highlights.git'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'jnurmine/Zenburn'
 
 " Enable filetype plugins
 syntax on
@@ -164,13 +165,23 @@ autocmd FileType gitcommit set spell
 " Setup some color stuff.
 set background=dark
 set t_Co=256
-colorscheme desert256
+"colorscheme desert256
+colorscheme zenburn
 
 set cursorline
 set colorcolumn=80
 
-hi Normal guibg=#cccccc ctermbg=234
-hi NonText guibg=#cccccc ctermbg=234
+" Set background color
+" hi Normal guibg=#cccccc ctermbg=234
+" hi NonText guibg=#cccccc ctermbg=234
+hi Normal ctermbg=235
+hi NonText ctermbg=235
+hi Statement ctermbg=235
+hi Visual ctermbg=60
+hi StatusLine ctermfg=246 ctermbg=234
+hi StatusLineNC ctermfg=238 ctermbg=187
+hi Todo ctermfg=30
+hi Exception ctermfg=187 ctermbg=235
 
 " highlight groups
 hi CursorLine  cterm=NONE ctermbg=236
