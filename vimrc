@@ -136,6 +136,7 @@ let NERDTreeWinSize = 22
 let NERDTreeMinimalUI = 1
 
 " Flake8 setup and shortcut
+let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=W391'
 nnoremap <leader>s :SyntasticCheck<CR>
 nnoremap zj :lnext<CR>zz
