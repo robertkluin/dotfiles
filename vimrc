@@ -298,3 +298,23 @@ function! ZoomMode(enable)
     endif
 endfunction
 
+function! RunTests()
+    " I can not decide if I like auto-save or not.  For now, not.
+    "execute ":w"
+
+    if exists('w:test_command')
+        let l:command = w:test_command
+    else
+        let l:command = g:run_test_command
+    endif
+
+    exec ":silent !tmux send-keys -t " . g:run_test_target . " '" . l:command . "' 'C-m'"
+
+    execute ":redraw!"
+endfunction
+
+let g:run_test_target = "+1"
+let g:run_test_command = '\!\!'
+"let g:run_test_command = "make unit"
+
+nmap <leader>t :call RunTests()<CR>
