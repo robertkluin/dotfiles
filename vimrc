@@ -219,6 +219,7 @@ function! ToggleExplorer()
             exec explorer_window_num . 'wincmd w'
             close
             exec current_window_num . 'wincmd w'
+            exec 'wincmd ='
         endif
         unlet t:explorer_buffer_num
     else
@@ -227,6 +228,7 @@ function! ToggleExplorer()
         Vexplore
         exec 'silent vertical resize 22'
         exec 'set winfixwidth'
+        exec 'wincmd ='
         let t:explorer_buffer_num = bufnr("%")
     endif
 endfunction
