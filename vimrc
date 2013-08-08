@@ -309,23 +309,29 @@ function! ZoomMode(enable)
     endif
 endfunction
 
-function! RunTests()
+function! ExecCommand()
     " I can not decide if I like auto-save or not.  For now, not.
     "execute ":w"
 
-    if exists('w:test_command')
-        let l:command = w:test_command
+    if exists('w:exec_command')
+        let l:command = w:exec_command
     else
-        let l:command = g:run_test_command
+        let l:command = g:exec_command
     endif
 
-    exec ":silent !tmux send-keys -t " . g:run_test_target . " '" . l:command . "' 'C-m'"
+    if exists('w:exec_target')
+        let l:target = w:exec_target
+    else
+        let l:target = g:exec_target
+    endif
+
+    exec ":silent !tmux send-keys -t " . l:target . " '" . l:command . "' 'C-m'"
 
     execute ":redraw!"
 endfunction
 
-let g:run_test_target = "+1"
-let g:run_test_command = '\!\!'
-"let g:run_test_command = "make unit"
+let g:exec_target = "+1"
+let g:exec_command = '\!\!'
+"let g:exec_command = "make unit"
 
-nmap <leader>t :call RunTests()<CR>
+nmap <leader>t :call ExecCommand()<CR>
