@@ -126,6 +126,11 @@ Bundle 'robertkluin/vim-handy-highlights.git'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jnurmine/Zenburn'
 
+" Add go's vim plugin
+set rtp+=/usr/local/go/misc/vim
+
+
+
 " Enable filetype plugins
 syntax on
 filetype plugin indent on
@@ -161,6 +166,9 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Turn spellcheck on for gitcommit by default.
 autocmd FileType gitcommit set spell
+
+" Tell go files to auto format on write.
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " Setup some color stuff.
 set background=dark
