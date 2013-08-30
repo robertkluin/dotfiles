@@ -2,6 +2,9 @@ if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
+
+export GOPATH=~/.go
+
 alias gae='cd /usr/local/google_appengine/'
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
