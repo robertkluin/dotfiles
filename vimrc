@@ -95,7 +95,7 @@ map <leader>c :set cursorcolumn!<cr>
 map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
 
 " toggle paste mode.
-map <leader>e :set paste!<CR>
+map <leader>e :set paste!<cr>:set paste?<cr>
 
 " toggle gundo on/off.
 map <leader>g :GundoToggle<CR>
