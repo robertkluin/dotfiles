@@ -16,6 +16,8 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 
+set modeline
+
 set number
 
 set hlsearch
@@ -327,10 +329,10 @@ function! ZoomMode()
     endif
 endfunction
 
-" Toggle spell mode on/off.
+" Toggle zoom mode on/off.
 map <leader>z :call ZoomMode()<cr>
 
-function! ExecCommand()
+function! ExecTmuxCommand()
     " I can not decide if I like auto-save or not.  For now, not.
     "execute ":w"
 
@@ -346,13 +348,19 @@ function! ExecCommand()
         let l:target = g:exec_target
     endif
 
-    exec ":silent !tmux send-keys -t " . l:target . " '" . l:command . "' 'C-m'"
+    call SendTmuxCommands(l:target, l:command)
+endfunction
 
+function! SendTmuxCommands(...)
+    for pair in range(0, a:0 - 2, 2)
+        let l:target = a:{pair + 1}
+        let l:command = a:{pair + 2}
+        exec ":silent !tmux send-keys -t " . l:target . " '" . l:command . "' 'C-m'"
+    endfor
     execute ":redraw!"
 endfunction
 
 let g:exec_target = "+1"
 let g:exec_command = '\!\!'
-"let g:exec_command = "make unit"
 
-nmap <leader>t :call ExecCommand()<CR>
+nmap <leader>t :call ExecTmuxCommand()<CR>
