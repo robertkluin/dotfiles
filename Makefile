@@ -35,6 +35,7 @@ keys-config: keys-sys keys-home
 # Bash config.
 bash-sys:
 	sudo ln -sf {$(DOTREPO),}/etc/profile
+	sudo ln -sf {$(DOTREPO),}/etc/profile.d
 
 bash-home:
 	ln -sf {$(DOTREPO)/,~/.}bashrc
