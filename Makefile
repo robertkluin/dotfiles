@@ -57,8 +57,7 @@ screen-sys:
 
 screen-config: screen-sys
 
-
-# tmu.
+# tmux.
 tmux-config:
 	ln -sf {$(DOTREPO)/,~/.}tmux.conf
 
