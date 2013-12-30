@@ -12,6 +12,10 @@ NOGLOBAL = keys-home bash-home vim-config tmux-config git-config hg-config
 # Where to link files from, should generally be `pwd`.
 DOTREPO = `pwd`
 
+# Make sure bash is used so that expansions are performed as expected.
+SHELL=/bin/bash
+
+
 all: (ALL)
 linux: (LINUX)
 noglobal: (NOGLOBAL)
