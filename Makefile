@@ -68,6 +68,6 @@ git-config:
 
 # Mercurial.
 hg-config:
-	ln -sf {$(DOTREPO)/,~/.}hgignore_global
 	ln -sf {$(DOTREPO)/,~/.}hgrc
+	ln -sf {$(DOTREPO)/,~/.}hgignore_global
 
