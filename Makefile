@@ -53,7 +53,7 @@ vim-config:
 
 # screen.
 screen-sys:
-	sudo ln -sf $(DOTREPO)/sys_screenrc /etc/screenrc
+	sudo ln -sf {$(DOTREPO),}/etc/screenrc
 
 screen-config: screen-sys
 
