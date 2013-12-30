@@ -9,9 +9,12 @@ LINUX = keys-global bash-config vim-config screen-config tmux-config git-config 
 NOGLOBAL = keys-home bash-home vim-config tmux-config git-config hg-config
 
 
-# Where to link stuff from, should be `pwd`, but who knows.
+# Where to link files from, should generally be `pwd`.
 DOTREPO = `pwd`
 
+all: (ALL)
+linux: (LINUX)
+noglobal: (NOGLOBAL)
 
 # Key setup.
 keys-global:
