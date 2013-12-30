@@ -30,7 +30,7 @@ bash-global:
 
 bash-home:
 	ln -sf {$(DOTREPO)/,~/.}bashrc
-	ln -sf {$(DOTREPO)/,~/.}bash_profile
+	ln -sf {$(DOTREPO)/,~/.}profile
 
 bash-config: bash-global bash-home
 
