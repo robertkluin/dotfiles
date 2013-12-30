@@ -3,7 +3,7 @@
 ALL = keys-config bash-config vim-config screen-config tmux-config git-config hg-config
 
 # Linux doesn't need a few things that OSX does.
-LINUX = keys-global bash-config vim-config screen-config tmux-config git-config hg-config
+LINUX = keys-sys bash-config vim-config screen-config tmux-config git-config hg-config
 
 # Don't put crap in /etc.
 NOGLOBAL = keys-home bash-home vim-config tmux-config git-config hg-config
@@ -21,25 +21,25 @@ linux: (LINUX)
 noglobal: (NOGLOBAL)
 
 # Key setup.
-keys-global:
+keys-sys:
 	sudo ln -sf $(DOTREPO)/sys_inputrc /etc/inputrc
 
 keys-home:
 	mkdir -p ~/Library/KeyBindings/
 	ln -sf {$(DOTREPO),~/Library/KeyBindings}/DefaultKeyBinding.dict
 
-keys-config: keys-global keys-home
+keys-config: keys-sys keys-home
 
 
 # Bash config.
-bash-global:
+bash-sys:
 	sudo ln -sf {$(DOTREPO),}/etc/profile
 
 bash-home:
 	ln -sf {$(DOTREPO)/,~/.}bashrc
 	ln -sf {$(DOTREPO)/,~/.}profile
 
-bash-config: bash-global bash-home
+bash-config: bash-sys bash-home
 
 
 # Vim.
@@ -52,10 +52,10 @@ vim-config:
 	git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # screen.
-screen-global:
+screen-sys:
 	sudo ln -sf $(DOTREPO)/sys_screenrc /etc/screenrc
 
-screen-config: screen-global
+screen-config: screen-sys
 
 
 # tmu.
