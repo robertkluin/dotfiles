@@ -17,6 +17,7 @@ SHELL=/bin/bash
 
 
 all: (ALL)
+osx: (ALL)
 linux: (LINUX)
 noglobal: (NOGLOBAL)
 
@@ -40,7 +41,6 @@ bash-home:
 	ln -sf {$(DOTREPO)/,~/.}profile
 
 bash-config: bash-sys bash-home
-
 
 # Vim.
 vim-config:
