@@ -22,7 +22,7 @@ noglobal: (NOGLOBAL)
 
 # Key setup.
 keys-sys:
-	sudo ln -sf $(DOTREPO)/sys_inputrc /etc/inputrc
+	sudo ln -sf {$(DOTREPO),}/etc/inputrc
 
 keys-home:
 	mkdir -p ~/Library/KeyBindings/
