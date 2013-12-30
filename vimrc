@@ -116,7 +116,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'sjl/gundo.vim'
-Bundle 'scrooloose/nerdtree'
+" Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
