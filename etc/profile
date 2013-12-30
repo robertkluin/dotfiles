@@ -2,7 +2,7 @@
 # variables and startup programs to Bourne shell compatible shells.
 
 # CONFIGURE PATHS
-# See if OSX's path_helper exists, and use it if so.
+# If OSX's path_helper exists use it.
 if [ -x /usr/libexec/path_helper ]; then
    eval `/usr/libexec/path_helper -s`
 else
