@@ -1,0 +1,44 @@
+# /etc/profile: Contains system-wide .profile for specifying environment
+# variables and startup programs to Bourne shell compatible shells.
+
+# CONFIGURE PATHS
+# See if OSX's path_helper exists, and use it if so.
+if [ -x /usr/libexec/path_helper ]; then
+   eval `/usr/libexec/path_helper -s`
+else
+    # Probably on older OSX, BSD, or Linux.
+    # Setup paths for root.
+    if [ $EUID -eq 0 ] ; then
+        PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    else
+        PATH="/usr/local/bin:/usr/bin:/bin"
+    fi
+fi
+
+
+# CONFIGURE PS1
+# Make PS1 pretty and informative.
+WHITE="\[\e[0m\]"
+RED="\[\e[0;31m\]"
+BRIGHT_RED="\[\e[1;31m\]"
+GREEN="\[\e[0;32m\]"
+BLUE="\[\e[1;34m\]"
+if [[ $EUID == 0 ]] ; then
+    PS1="$BRIGHT_RED\u@$RED\h$WHITE:$BLUE\w$BRIGHT_RED# $WHITE "
+else
+    PS1="$GREEN\u@$RED\h$WHITE:$BLUE\w$WHITE\\$ "
+fi
+
+unset WHITE RED BRIGHT_RED GREEN BLUE
+
+# CONFIGURE CUSTOM
+# Load individual config settings from /etc/profile.d/*.sh
+if [ -d /etc/profile.d ]; then
+    for script in /etc/profile.d/*.sh; do
+        if [ -r $script ]; then
+            . $script
+        fi
+    done
+    unset script
+fi
+

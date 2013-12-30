@@ -33,7 +33,7 @@ keys-config: keys-global keys-home
 
 # Bash config.
 bash-global:
-	sudo ln -sf $(DOTREPO)/sys_bashrc /etc/bashrc
+	sudo ln -sf {$(DOTREPO),}/etc/profile
 
 bash-home:
 	ln -sf {$(DOTREPO)/,~/.}bashrc
