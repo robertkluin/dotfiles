@@ -39,6 +39,7 @@ bash-sys:
 bash-home:
 	ln -sf {$(DOTREPO)/,~/.}bashrc
 	ln -sf {$(DOTREPO)/,~/.}profile
+	ln -sf {$(DOTREPO)/,~/.}bash_aliases
 
 bash-config: bash-sys bash-home
 
