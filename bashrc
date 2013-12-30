@@ -1,9 +1,8 @@
+# ~/.bashrc: non-login shell bash config
+
 if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
-
-
-export GOPATH=~/.go
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh

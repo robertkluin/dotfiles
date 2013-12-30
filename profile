@@ -1,4 +1,7 @@
+# ~/.profile: config to hold ENV vars and perform basic setup.
+
 if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
+    . ~/.bashrc
 fi
 
+export GOPATH=~/.go
