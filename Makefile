@@ -35,7 +35,7 @@ keys-config: keys-sys keys-home
 # Bash config.
 bash-sys:
 	sudo ln -sf {$(DOTREPO),}/etc/profile
-	sudo ln -sf {$(DOTREPO),}/etc/profile.d
+	-test ! -L /etc/profile.d && sudo ln -sf {$(DOTREPO),}/etc/profile.d
 
 bash-home:
 	ln -sf {$(DOTREPO)/,$(HOME)/.}bashrc
@@ -51,7 +51,7 @@ vim-config:
 	ln -sf {$(DOTREPO)/,$(HOME)/.}vimrc
 	ln -sf {$(DOTREPO)/,$(HOME)/.}gvimrc
 	ln -sf $(DOTREPO)/vim/* $(HOME)/.vim/
-	git clone git://github.com/gmarik/vundle.git $(HOME)/.vim/bundle/vundle
+	-test ! -d $(HOME)/.vim/bundle/vundle && git clone git://github.com/gmarik/vundle.git $(HOME)/.vim/bundle/vundle
 
 # screen.
 screen-sys:
