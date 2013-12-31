@@ -4,16 +4,16 @@
 if [ -f /etc/dircolors ]; then
     eval $(dircolors -b /etc/dircolors)
 
-    if [ -f ~/.dircolors ] ; then
-        eval $(dircolors -b ~/.dircolors)
+    if [ -f "$HOME/.dircolors" ] ; then
+        eval $(dircolors -b "$HOME/.dircolors")
     fi
 fi
 
 # ls
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+if [ "$(uname -s)" == "Linux" ]; then
     alias ls='ls --color=auto'
 else
-    alias ls='ls -G'
+   alias ls='ls -G'
 fi
 
 # Setup an alias for `ll`

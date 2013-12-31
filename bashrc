@@ -1,4 +1,4 @@
-# ~/.bashrc: non-login shell bash config
+# $HOME/.bashrc: non-login shell bash config
 
 if [ -f /etc/bashrc ]; then
     source /etc/bashrc
@@ -8,8 +8,8 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f "$HOME/.bash_aliases" ]; then
+    . "$HOME/.bash_aliases"
 fi
 
 function itermtitle () {

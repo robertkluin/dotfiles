@@ -14,6 +14,7 @@ else
         PATH="/usr/local/bin:/usr/bin:/bin"
     fi
 fi
+export PATH
 
 
 # CONFIGURE PS1
@@ -28,6 +29,7 @@ if [[ $EUID == 0 ]] ; then
 else
     PS1="$GREEN\u@$RED\h$WHITE:$BLUE\w$WHITE\\$ "
 fi
+export PS1
 
 unset WHITE RED BRIGHT_RED GREEN BLUE
 
