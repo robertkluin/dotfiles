@@ -10,7 +10,7 @@ NOGLOBAL = keys-home bash-home vim-config tmux-config git-config hg-config
 
 
 # Where to link files from, should generally be `pwd`.
-DOTREPO = `pwd`
+DOTREPO = $(CURDIR)
 
 # Make sure bash is used so that expansions are performed as expected.
 SHELL=/bin/bash
@@ -26,8 +26,8 @@ keys-sys:
 	sudo ln -sf {$(DOTREPO),}/etc/inputrc
 
 keys-home:
-	mkdir -p ~/Library/KeyBindings/
-	ln -sf {$(DOTREPO),~/Library/KeyBindings}/DefaultKeyBinding.dict
+	mkdir -p $(HOME)/Library/KeyBindings/
+	ln -sf {$(DOTREPO),$(HOME)/Library/KeyBindings}/DefaultKeyBinding.dict
 
 keys-config: keys-sys keys-home
 
@@ -38,20 +38,20 @@ bash-sys:
 	sudo ln -sf {$(DOTREPO),}/etc/profile.d
 
 bash-home:
-	ln -sf {$(DOTREPO)/,~/.}bashrc
-	ln -sf {$(DOTREPO)/,~/.}profile
-	ln -sf {$(DOTREPO)/,~/.}bash_aliases
+	ln -sf {$(DOTREPO)/,$(HOME)/.}bashrc
+	ln -sf {$(DOTREPO)/,$(HOME)/.}profile
+	ln -sf {$(DOTREPO)/,$(HOME)/.}bash_aliases
 
 bash-config: bash-sys bash-home
 
 # Vim.
 vim-config:
-	mkdir -p ~/.vim/bundle
-	mkdir -p ~/tmp/vim/{backup,swap,undo}
-	ln -sf {$(DOTREPO)/,~/.}vimrc
-	ln -sf {$(DOTREPO)/,~/.}gvimrc
-	ln -sf $(DOTREPO)/vim/* ~/.vim/
-	git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	mkdir -p $(HOME)/.vim/bundle
+	mkdir -p $(HOME)/tmp/vim/{backup,swap,undo}
+	ln -sf {$(DOTREPO)/,$(HOME)/.}vimrc
+	ln -sf {$(DOTREPO)/,$(HOME)/.}gvimrc
+	ln -sf $(DOTREPO)/vim/* $(HOME)/.vim/
+	git clone git://github.com/gmarik/vundle.git $(HOME)/.vim/bundle/vundle
 
 # screen.
 screen-sys:
@@ -61,15 +61,15 @@ screen-config: screen-sys
 
 # tmux.
 tmux-config:
-	ln -sf {$(DOTREPO)/,~/.}tmux.conf
+	ln -sf {$(DOTREPO)/,$(HOME)/.}tmux.conf
 
 # git.
 git-config:
-	ln -sf {$(DOTREPO)/,~/.}gitconfig
-	ln -sf {$(DOTREPO)/,~/.}gitignore_global
+	ln -sf {$(DOTREPO)/,$(HOME)/.}gitconfig
+	ln -sf {$(DOTREPO)/,$(HOME)/.}gitignore_global
 
 # Mercurial.
 hg-config:
-	ln -sf {$(DOTREPO)/,~/.}hgrc
-	ln -sf {$(DOTREPO)/,~/.}hgignore_global
+	ln -sf {$(DOTREPO)/,$(HOME)/.}hgrc
+	ln -sf {$(DOTREPO)/,$(HOME)/.}hgignore_global
 
