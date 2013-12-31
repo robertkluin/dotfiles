@@ -16,10 +16,10 @@ DOTREPO = $(CURDIR)
 SHELL=/bin/bash
 
 
-all: (ALL)
-osx: (ALL)
-linux: (LINUX)
-noglobal: (NOGLOBAL)
+all: $(ALL)
+osx: $(ALL)
+linux: $(LINUX)
+noglobal: $(NOGLOBAL)
 
 # Key setup.
 keys-sys:
