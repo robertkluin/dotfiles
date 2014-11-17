@@ -153,6 +153,9 @@ nnoremap <leader>s :SyntasticCheck<CR>
 nnoremap zj :lnext<CR>zz
 nnoremap zk :lprev<CR>zz
 
+" Tell vim-go to mimic python-mode key bindings
+autocmd FileType go nmap <C-c>g <Plug>(go-def)
+
 " mako syntax highlighting
 autocmd BufRead *.mako set filetype=mako
 
@@ -171,9 +174,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Turn spellcheck on for gitcommit by default.
 autocmd FileType gitcommit set spell
-
-" Tell go files to auto format on write.
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " Setup some color stuff.
 set background=dark
