@@ -128,8 +128,8 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'robertkluin/vim-handy-highlights.git'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'wting/rust.vim'
 Bundle 'jnurmine/Zenburn'
+Bundle 'wting/rust.vim'
 
 " Add go's vim plugin
 set rtp+=/usr/local/go/misc/vim
