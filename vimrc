@@ -128,6 +128,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'robertkluin/vim-handy-highlights.git'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'wting/rust.vim'
 Bundle 'jnurmine/Zenburn'
 
 " Add go's vim plugin
