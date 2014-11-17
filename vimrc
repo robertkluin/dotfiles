@@ -93,7 +93,7 @@ map <leader><cr> :noh<cr>
 map <leader>p :set spell!<cr>:set spell?<cr>
 
 " toggle current column highlight shortcut.
-map <leader>c :set cursorcolumn!<cr>
+map <leader>c :set cursorcolumn!<cr>:set cursorcolumn?<cr>
 
 " toggle between relative and absolute line numbers.
 map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
