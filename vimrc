@@ -96,7 +96,7 @@ map <leader>p :set spell!<cr>:set spell?<cr>
 map <leader>c :set cursorcolumn!<cr>:set cursorcolumn?<cr>
 
 " toggle between relative and absolute line numbers.
-map <leader>r :exec "set " &nu ? "rnu": "nu"<cr>
+map <leader>r :set rnu!<cr>:set rnu?<cr>
 
 " toggle paste mode.
 map <leader>e :set paste!<cr>:set paste?<cr>
