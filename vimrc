@@ -51,6 +51,8 @@ let g:pymode_lint_ignore = "W391"
 let g:pymode_lint = 0
 let g:pymode_lint_cwindow = 0
 let g:pymode_run = 0
+let g:pymode_rope_goto_definition_cmd = 'e'
+let g:pymode_doc = 0
 
 let python_highlight_all=1
 
