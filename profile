@@ -5,3 +5,5 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 export GOPATH="$HOME/.go"
+
+export HISTCONTROL=ignoredups:erasedups
