@@ -4,6 +4,8 @@ set nocompatible
 set ruler
 set showcmd
 
+set nowrap
+
 set laststatus=2
 
 set hidden
