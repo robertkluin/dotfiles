@@ -344,13 +344,17 @@ function! ExecTmuxCommand()
     " I can not decide if I like auto-save or not.  For now, not.
     "execute ":w"
 
-    if exists('w:exec_command')
+    if exists('b:exec_command')
+        let l:command = b:exec_command
+    elseif exists('w:exec_command')
         let l:command = w:exec_command
     else
         let l:command = g:exec_command
     endif
 
-    if exists('w:exec_target')
+    if exists('b:exec_target')
+        let l:target = b:exec_target
+    elseif exists('w:exec_target')
         let l:target = w:exec_target
     else
         let l:target = g:exec_target
