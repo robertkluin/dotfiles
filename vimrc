@@ -132,6 +132,7 @@ Bundle 'robertkluin/vim-handy-highlights.git'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jnurmine/Zenburn'
 Bundle 'wting/rust.vim'
+Bundle 'raichoo/purescript-vim'
 
 " Add go's vim plugin
 set rtp+=/usr/local/go/misc/vim
