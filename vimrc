@@ -48,17 +48,6 @@ set undodir=~/tmp/vim/undo//
 set directory=~/tmp/vim/swap//
 
 
-let g:pymode_folding=0
-let g:pymode_lint_ignore = "W391"
-let g:pymode_lint = 0
-let g:pymode_lint_cwindow = 0
-let g:pymode_run = 0
-let g:pymode_rope_goto_definition_cmd = 'e'
-let g:pymode_doc = 0
-
-let python_highlight_all=1
-
-
 " Fix Y to work like other Caps, such as D.
 nnoremap Y y$
 
@@ -142,6 +131,22 @@ set rtp+=/usr/local/go/misc/vim
 " Enable filetype plugins
 syntax on
 filetype plugin indent on
+
+
+" Fix fucking pymode
+let g:pymode_folding = 0
+let g:pymode_lint_ignore = "W391"
+let g:pymode_lint = 0
+let g:pymode_lint_cwindow = 0
+let g:pymode_run = 0
+let g:pymode_rope_goto_definition_cmd = 'e'
+let g:pymode_doc = 0
+let g:pymode_rope_complete_on_dot = 0
+
+let python_highlight_all=1
+
+
+
 
 " tweak nerd tree
 "nnoremap <leader>f :NERDTreeToggle<CR><C-w>=
