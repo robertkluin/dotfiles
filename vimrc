@@ -167,6 +167,9 @@ autocmd BufRead *.jinja,*.jst,*.handlebars set filetype=html
 " Set html, coffee, and javascript indent depths to 2-space.
 autocmd FileType coffee,html,javascript,mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+" Set Markdown preferences
+autocmd FileType markdown setlocal textwidth=79 spell
+
 " Flex syntax highlighting
 autocmd BufRead *.as set filetype=actionscript
 autocmd BufRead *.mxml set filetype=mxml
