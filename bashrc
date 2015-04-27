@@ -12,6 +12,8 @@ if [ -f "$HOME/.bash_aliases" ]; then
     . "$HOME/.bash_aliases"
 fi
 
+export HISTCONTROL=ignoredups:erasedups
+
 function itermtitle () {
   # The 0 is the mode: 0 - tab and window; 1 - tab; 2 - window
   echo -ne "\033]0;$@\007"
