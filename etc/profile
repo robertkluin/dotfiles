@@ -16,6 +16,9 @@ else
 fi
 export PATH
 
+if [ "${BASH-no}" != "no" ]; then
+	[ -r /etc/bashrc ] && . /etc/bashrc
+fi
 
 # CONFIGURE PS1
 # Make PS1 pretty and informative.
