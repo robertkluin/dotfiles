@@ -420,3 +420,6 @@ let g:exec_target = "+1"
 let g:exec_command = '\!\!'
 
 nmap <leader>t :call ExecTmuxCommand()<CR>
+
+
+" vim:foldmethod=marker:foldlevel=0
