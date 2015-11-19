@@ -1,44 +1,57 @@
 
-set nocompatible
+set nocompatible  " Make Vim more useful.
 
-set ruler
-set showcmd
+set modeline      " Use modlines?
+set modelines=1   " Use modlines?
 
-set nowrap
+" Layout / window stuff {{{
+set laststatus=2  " Always show the status line.
+set ruler         " Show the line coordinates and file position in status line.
+set showcmd       " Show the last command typed in the status line.
+set number        " Why is this even an option?  (show line numbers).
+set nowrap        " Do not visual word wrap lines.
 
-set laststatus=2
+set hidden        " Buffers remain in memory when not attached.
 
-set hidden
+set cursorline    " Highlight the line the cursor is on.
+set colorcolumn=80 " Put a bar down column 80.
 
-set backspace=2
+" }}}
 
-set tabstop=4
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set autoindent
-
-set modeline
-
-set number
-
-set hlsearch
-
-set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
-
-set wildmode=longest:full
-set wildmenu
-
-" Do not search pyc files.
-set wildignore+=*.pyc
+set backspace=indent,eol,start  " What should BS do?
 
 set history=1000
 
 set mouse=a
 
-" Backup files
+" Indenting and tabs {{{
+set autoindent     " Preserve indenting when starting new line.
+
+set expandtab      " Use spaces, rather than tab char.
+set tabstop=4      " How many spaces should be used for tab?
+set shiftwidth=4   " Number of spaces for (auto)indent.
+set softtabstop=4  " Number of spaces tab counts for.
+
+"}}}
+
+" Searching {{{
+set noincsearch    " Disable incremental search
+set hlsearch       " Highlight search matches.
+
+" }}}
+
+" How to display assorted non-printing chars
+set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
+
+set wildmode=longest:full  " Autocomplete longest possible common segment.
+set wildmenu       " Show an auto-complete list.
+set wildignore+=*.pyc  " Do not autocomplete pyc files.
+
+" Backup files {{{
 set backup
 set backupdir=~/tmp/vim/backup//
+set backupskip=/tmp/*,~/tmp/*
+set writebackup
 
 " Put undo files in a special safe place.
 set undofile
@@ -47,6 +60,7 @@ set undodir=~/tmp/vim/undo//
 " Put swap files in a special place.
 set directory=~/tmp/vim/swap//
 
+"}}}
 
 " Fix Y to work like other Caps, such as D.
 nnoremap Y y$
