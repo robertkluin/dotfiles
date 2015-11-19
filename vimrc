@@ -263,17 +263,6 @@ hi ColorColumn  cterm=NONE ctermbg=232
 "}}}
 
 
-" Some stuff for dbext.
-let g:dbext_default_type = 'SQLSRV'
-let g:dbext_default_user = 'sa'
-let g:dbext_default_srvname = 'darnbear'
-let g:dbext_default_dbname = '@askkb'
-let g:dbext_default_SQLSRV_bin = '/Users/bobert/tmp/pdb-test/sql-sendfile.py'
-let g:dbext_default_SQLSRV_cmd_options = ' '
-let g:dbext_default_SQLSRV_cmd_terminator = ' '
-
-" Better buffer explorer.
-nnoremap <C-t> :buffers<CR>:buffer<space>
 
 " Make netrw usable as a file explorer
 " Use a tre view
