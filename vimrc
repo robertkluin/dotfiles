@@ -199,33 +199,42 @@ nnoremap <leader>s :SyntasticCheck<CR>
 nnoremap zj :lnext<CR>zz
 nnoremap zk :lprev<CR>zz
 
-" Tell vim-go to mimic python-mode key bindings
-autocmd FileType go nmap <C-c>g <Plug>(go-def)
+"}}}
 
-" mako syntax highlighting
-autocmd BufRead *.mako set filetype=mako
+" Cusomt File Tweaks {{{
+augroup configroup
+    " Clear all autocmds for this group.
+    autocmd!
 
-" make jinja, jst, and handlebars templates use html syntax highlighting
-autocmd BufRead *.jinja,*.jst,*.handlebars set filetype=html
+    " Tell vim-go to mimic python-mode key bindings
+    autocmd FileType go nmap <C-c>g <Plug>(go-def)
 
-" Set html, coffee, and javascript indent depths to 2-space.
-autocmd FileType coffee,html,javascript,mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    " mako syntax highlighting
+    autocmd BufRead *.mako set filetype=mako
 
-" Set haskell and purescript indent depths to 2-space.
-autocmd FileType haskell,purescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    " make jinja, jst, and handlebars templates use html syntax highlighting
+    autocmd BufRead *.jinja,*.jst,*.handlebars set filetype=html
 
-" Set Markdown preferences
-autocmd FileType markdown setlocal textwidth=79 spell
+    " Set html, coffee, and javascript indent depths to 2-space.
+    autocmd FileType coffee,html,javascript,mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" Flex syntax highlighting
-autocmd BufRead *.as set filetype=actionscript
-autocmd BufRead *.mxml set filetype=mxml
+    " Set haskell and purescript indent depths to 2-space.
+    autocmd FileType haskell,purescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" Remove trailing white-space from python files.
-autocmd BufWritePre *.py :%s/\s\+$//e
+    " Set Markdown preferences
+    autocmd FileType markdown setlocal textwidth=79 spell
 
-" Turn spellcheck on for gitcommit by default.
-autocmd FileType gitcommit set spell
+    " Flex syntax highlighting
+    autocmd BufRead *.as set filetype=actionscript
+    autocmd BufRead *.mxml set filetype=mxml
+
+    " Remove trailing white-space from python files.
+    autocmd BufWritePre *.py :%s/\s\+$//e
+
+    " Turn spellcheck on for gitcommit by default.
+    autocmd FileType gitcommit set spell
+augroup END
+"}}}
 
 " Make Colors More Nicer {{{
 
