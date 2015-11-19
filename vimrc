@@ -62,6 +62,8 @@ set directory=~/tmp/vim/swap//
 
 "}}}
 
+" Key Bindings {{{
+
 " Fix Y to work like other Caps, such as D.
 nnoremap Y y$
 
@@ -88,6 +90,15 @@ nnoremap ,, ,
 " ; for cmd-mode entry
 nnoremap ; :
 
+" gV to highlight last inserted text
+nnoremap gV `[v`]
+
+" Better buffer explorer.
+nnoremap <C-t> :buffers<CR>:buffer<space>
+
+"}}}
+
+" Leader Mappings {{{
 " remap leader from \
 let mapleader = ","
 
@@ -109,6 +120,11 @@ map <leader>e :set paste!<cr>:set paste?<cr>
 " toggle gundo on/off.
 map <leader>g :GundoToggle<CR>
 
+" Toggle hidden chars.
+map <leader>l :set list!<cr>
+
+"}}}
+
 " insert wd of current file.
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
@@ -117,7 +133,7 @@ filetype on
 " filetype being on breaks pathogen
 filetype off
 
-" startup vundle
+" Vundle (much like a grundle...) {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -137,6 +153,8 @@ Bundle 'jnurmine/Zenburn'
 Bundle 'wting/rust.vim'
 Bundle 'raichoo/purescript-vim'
 
+"}}}
+
 " Add go's vim plugin
 set rtp+=/usr/local/go/misc/vim
 
@@ -146,6 +164,8 @@ set rtp+=/usr/local/go/misc/vim
 syntax on
 filetype plugin indent on
 
+
+" Fix Silly Plugins {{{
 
 " Fix fucking pymode
 let g:pymode_folding = 0
@@ -160,6 +180,10 @@ let g:pymode_rope_complete_on_dot = 0
 let python_highlight_all=1
 
 
+" Ctrl-P Tune up
+let g:ctrlp_match_window = "bottom,order:ttb"
+let g:ctrlp_switch_buffer = "v"
+let g:ctrlp_working_path_mode = "r"
 
 
 " tweak nerd tree
@@ -203,14 +227,12 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 " Turn spellcheck on for gitcommit by default.
 autocmd FileType gitcommit set spell
 
-" Setup some color stuff.
+" Make Colors More Nicer {{{
+
 set background=dark
 set t_Co=256
 "colorscheme desert256
 colorscheme zenburn
-
-set cursorline
-set colorcolumn=80
 
 " Set background color
 " hi Normal guibg=#cccccc ctermbg=234
@@ -229,6 +251,7 @@ hi CursorLine  cterm=NONE ctermbg=236
 hi CursorColumn  cterm=NONE ctermbg=236
 hi ColorColumn  cterm=NONE ctermbg=232
 
+"}}}
 
 
 " Some stuff for dbext.
