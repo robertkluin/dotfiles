@@ -27,6 +27,4 @@
 [merge]
     tool = vimdiff
 
-[tig]
-    line-number-interval = 1
 
