@@ -182,6 +182,9 @@ let g:pymode_rope_complete_on_dot = 0
 
 let python_highlight_all=1
 
+" Make elm-format do its magic
+let g:elm_format_autosave = 1
+let g:elm_setup_keybindings = 0
 
 " Ctrl-P Tune up
 let g:ctrlp_match_window = "bottom,order:ttb"
