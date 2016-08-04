@@ -41,7 +41,7 @@ set hlsearch       " Highlight search matches.
 " }}}
 
 " How to display assorted non-printing chars
-set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
+" set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
 
 set wildmode=longest:full  " Autocomplete longest possible common segment.
 set wildmenu       " Show an auto-complete list.
