@@ -123,6 +123,9 @@ map <leader>g :GundoToggle<CR>
 " Toggle hidden chars.
 map <leader>l :set list!<cr>
 
+" Sort
+map <leader>s :sort<cr>
+
 "}}}
 
 " insert wd of current file.
