@@ -4,6 +4,10 @@ if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
+if [ -f /etc/profile ]; then
+    source /etc/profile
+fi
+
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
