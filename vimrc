@@ -76,7 +76,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-nnoremap <C-x> <C-w>x
+" nnoremap <C-x> <C-w>x
 
 " jj as shortcut for escape
 noremap! jj <Esc>
