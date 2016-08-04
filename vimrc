@@ -207,7 +207,7 @@ nnoremap zk :lprev<CR>zz
 
 "}}}
 
-" Cusomt File Tweaks {{{
+" Custom File Tweaks {{{
 augroup configroup
     " Clear all autocmds for this group.
     autocmd!
@@ -238,7 +238,7 @@ augroup configroup
     autocmd BufWritePre *.py :%s/\s\+$//e
 
     " Turn spellcheck on for gitcommit by default.
-    autocmd FileType gitcommit set spell
+    autocmd FileType gitcommit set textwidth=72 spell
 augroup END
 "}}}
 
