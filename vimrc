@@ -44,8 +44,9 @@ set hlsearch       " Highlight search matches.
 " set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
 
 set wildmode=longest:full  " Autocomplete longest possible common segment.
-set wildmenu       " Show an auto-complete list.
-set wildignore+=*.pyc  " Do not autocomplete pyc files.
+set wildmenu               " Show an auto-complete list.
+set wildignore+=*.pyc      " Do not autocomplete pyc files.
+set wildignorecase         " Ignore case in path completion.
 
 " Backup files {{{
 set backup
