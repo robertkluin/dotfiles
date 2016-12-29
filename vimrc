@@ -127,6 +127,9 @@ map <leader>l :set list!<cr>
 " Sort
 map <leader>s :sort<cr>
 
+" Blame
+map <leader>B :Gblame<cr>
+
 "}}}
 
 " insert wd of current file.
