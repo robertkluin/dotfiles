@@ -363,7 +363,9 @@ nnoremap za :<C-u>call ScrollToPercent(20)<cr>
 
 
 function! ZoomMode()
-    if exists("t:zoom_mode_enabled")
+    if !exists("t:zoom_mode_enabled")
+        echo "  zoommode"
+
         " If zoom mode is on, make windows a size usable for coding as we jump
         " between them.
         set winwidth=84
@@ -375,23 +377,23 @@ function! ZoomMode()
         set winminheight=15
         set winheight=999
 
-        " Mark ZoomMode as off.
-        unlet t:zoom_mode_enabled
-
-        echo "  zoom"
+        " Mark ZoomMode as currently on.
+        let t:zoom_mode_enabled = 1
     else
+        echo "nozoommode"
+
         " If zoom mode is not on, set resize limits much lower.
         set winwidth=20
         set winheight=15
         set winminheight=1
         set winheight=1
 
-        " Mark that ZoomMode is on.
-        let t:zoom_mode_enabled = 1
-
-        echo "nozoom"
+        " Make sure zoom mode marked as off.
+        unlet t:zoom_mode_enabled
     endif
 endfunction
+
+silent! call ZoomMode()
 
 " Toggle zoom mode on/off.
 map <leader>z :call ZoomMode()<cr>
