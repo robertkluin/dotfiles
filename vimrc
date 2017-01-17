@@ -128,7 +128,7 @@ map <leader>l :set list!<cr>
 map <leader>s :sort<cr>
 
 " Blame
-map <leader>B :Gblame<cr>
+map <leader>b :Gblame<cr>
 
 "}}}
 
@@ -185,6 +185,7 @@ let g:pymode_run = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
 let g:pymode_doc = 0
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_breakpoint = 0
 
 let python_highlight_all=1
 
