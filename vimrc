@@ -48,6 +48,10 @@ set wildmenu               " Show an auto-complete list.
 set wildignore+=*.pyc      " Do not autocomplete pyc files.
 set wildignorecase         " Ignore case in path completion.
 
+" Autocomplete is basically unusable (for me) when set to scan for included
+" files.
+set complete=.,w,b,u,t     " Default '.,w,b,u,t,i'; The i says included files.
+
 " Backup files {{{
 set backup
 set backupdir=~/tmp/vim/backup//
