@@ -238,6 +238,9 @@ augroup configroup
     " Set haskell and purescript indent depths to 2-space.
     autocmd FileType haskell,purescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+    " Set cpp and arduino indent depths to 2-space.
+    autocmd FileType cpp,arduino setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
     " Set Markdown preferences
     autocmd FileType markdown setlocal textwidth=79 spell
 
