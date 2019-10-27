@@ -279,6 +279,7 @@ hi Exception ctermfg=187 ctermbg=235
 
 " highlight groups
 hi CursorLine  cterm=NONE ctermbg=236
+hi CursorLineNr  cterm=bold ctermbg=236
 hi CursorColumn  cterm=NONE ctermbg=236
 hi ColorColumn  cterm=NONE ctermbg=232
 
