@@ -196,6 +196,8 @@ let python_highlight_all=1
 " Make elm-format do its magic
 let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
+let g:elm_format_fail_silently = 1
+
 
 " Ctrl-P Tune up
 let g:ctrlp_match_window = "bottom,order:ttb"
