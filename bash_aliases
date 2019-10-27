@@ -2,3 +2,4 @@
 
 alias gae='cd /usr/local/google_appengine/'
 
+alias ll='ls -la'
