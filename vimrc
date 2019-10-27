@@ -307,29 +307,6 @@ let g:netrw_banner = 0
 " Hide crap that I don't want to see.
 let g:netrw_list_hide= '^\..*$,^.*\.pyc$'
 
-function! ToggleExplorer()
-    if exists("t:explorer_buffer_num")
-        let explorer_window_num = bufwinnr(t:explorer_buffer_num)
-        if explorer_window_num != -1
-            let current_window_num = winnr()
-            exec explorer_window_num . 'wincmd w'
-            close
-            exec current_window_num . 'wincmd w'
-            exec 'wincmd ='
-        endif
-        unlet t:explorer_buffer_num
-    else
-        " goto left window
-        exec '1wincmd w'
-        Vexplore
-        exec 'silent vertical resize 22'
-        exec 'set winfixwidth'
-        exec 'wincmd ='
-        let t:explorer_buffer_num = bufnr("%")
-    endif
-endfunction
-
-nnoremap <leader>f :call ToggleExplorer()<CR>
 
 
 
