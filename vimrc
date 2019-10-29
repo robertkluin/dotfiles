@@ -171,41 +171,6 @@ filetype plugin indent on
 
 " Fix Silly Plugins {{{
 
-" Fix fucking pymode
-let g:pymode_folding = 0
-let g:pymode_lint_ignore = "W391"
-let g:pymode_lint = 0
-let g:pymode_lint_cwindow = 0
-let g:pymode_run = 0
-let g:pymode_rope_goto_definition_cmd = 'e'
-let g:pymode_doc = 0
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_breakpoint = 0
-
-let python_highlight_all=1
-
-" Make elm-format do its magic
-let g:elm_format_autosave = 1
-let g:elm_setup_keybindings = 0
-let g:elm_format_fail_silently = 1
-
-
-" Ctrl-P Tune up
-let g:ctrlp_match_window = "bottom,order:ttb"
-let g:ctrlp_switch_buffer = "v"
-let g:ctrlp_working_path_mode = "r"
-
-
-" tweak nerd tree
-"nnoremap <leader>f :NERDTreeToggle<CR><C-w>=
-let NERDTreeIgnore = ['\.pyc$']
-let NERDTreeWinSize = 22
-let NERDTreeMinimalUI = 1
-
-" Flake8 setup and shortcut
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=W391'
-nnoremap <leader>s :SyntasticCheck<CR>
 nnoremap zj :lnext<CR>zz
 nnoremap zk :lprev<CR>zz
 
