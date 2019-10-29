@@ -144,34 +144,25 @@ filetype on
 " filetype being on breaks pathogen
 filetype off
 
-" Vundle (much like a grundle...) {{{
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
 
-Bundle 'sjl/gundo.vim'
-" Bundle 'scrooloose/nerdtree'
-Bundle 'klen/python-mode'
-" Bundle 'scrooloose/syntastic'
-" Bundle 'kchmck/vim-coffee-script'
-Bundle 'fatih/vim-go'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'robertkluin/vim-handy-highlights.git'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'jnurmine/Zenburn'
-Bundle 'wting/rust.vim'
-Bundle 'raichoo/purescript-vim'
-" Bundle 'lambdatoast/elm.vim'
-Bundle 'elmcast/elm-vim'
+" plug.vim {{{
+"
+"
+call plug#begin('~/.vim/plugged')
+
+Plug 'sjl/gundo.vim'
+Plug 'kien/rainbow_parentheses.vim'
+" Plug 'tpope/vim-fugitive.git'
+" Plug 'robertkluin/vim-handy-highlights.git'
+Plug 'airblade/vim-gitgutter'
+Plug 'jnurmine/Zenburn'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'andys8/vim-elm-syntax'
+
+call plug#end()
+
 
 "}}}
-
-" Add go's vim plugin
-set rtp+=/usr/local/go/misc/vim
-
-
 
 " Enable filetype plugins
 syntax on
@@ -309,6 +300,9 @@ let g:netrw_list_hide= '^\..*$,^.*\.pyc$'
 
 
 
+" I think I'll make <leader>f grep recursive for the word under the cursor in
+" files matching the current file's extension.
+"#nnoremap <leader>f :call GrepToken()<CR>
 
 let g:pygrepprg="grepp\\ -n"
 
@@ -320,6 +314,7 @@ function! PyGrep(args)
     let &grepprg=grepprg_bak
     exec "redraw!"
 endfunction
+
 
 command! -nargs=* -complete=file G call PyGrep(<q-args>)
 
