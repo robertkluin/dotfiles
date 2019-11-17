@@ -171,8 +171,27 @@ filetype plugin indent on
 
 " Fix Silly Plugins {{{
 
-nnoremap zj :lnext<CR>zz
-nnoremap zk :lprev<CR>zz
+" Tell gundo to prefer python3
+let g:gundo_prefer_python3 = 1
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" nnoremap zj :lnext<CR>zz
+" nnoremap zk :lprev<CR>zz
+
+" " Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Create mappings for function text object, requires document symbols feature
+" of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
 
 "}}}
 
