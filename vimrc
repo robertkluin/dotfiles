@@ -258,6 +258,26 @@ hi CursorLineNr  cterm=bold ctermbg=236
 hi CursorColumn  cterm=NONE ctermbg=236
 hi ColorColumn  cterm=NONE ctermbg=232
 
+" Toggle high-contrast mode on/of
+
+function! ToggleContrast()
+    if !exists("t:high_contrast_mode_enabled")
+        echo "  high contrast mode"
+
+        let g:zenburn_high_Contrast = 1
+        let t:high_contrast_mode_enabled = 1
+    else
+        echo "  low contrast mode"
+
+        let g:zenburn_high_Contrast = 0
+        unlet t:high_contrast_mode_enabled
+    endif
+
+    colorscheme zenburn
+endfunction
+
+map <leader>h :call ToggleContrast()<cr>
+
 "}}}
 
 
