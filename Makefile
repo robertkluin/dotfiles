@@ -45,6 +45,10 @@ bash-home:
 
 bash-config: bash-sys bash-home
 
+# zsh.
+zsh:
+	ln -sf {$(DOTREPO)/,$(HOME)/.}zshrc
+
 # Vim.
 vim-config:
 	mkdir -p $(HOME)/.vim/bundle
