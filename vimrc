@@ -210,7 +210,10 @@ augroup configroup
     autocmd BufRead *.jinja,*.jst,*.handlebars set filetype=html
 
     " Set html, coffee, and javascript indent depths to 2-space.
-    autocmd FileType coffee,html,javascript,mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType coffee,html,mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+    " Set javascript indent depths to 4-space.
+    autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
     " Set haskell and purescript indent depths to 2-space.
     autocmd FileType haskell,purescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
