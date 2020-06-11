@@ -12,14 +12,15 @@ else
     PROMPT='%F{green}%n%F{white}:%B%F{blue}%2~%b%F{white}%(!.#.$) '
 fi
 
-# ZSH history preferences
+# ZSH preferences
 # =======================
 # Basically, I'd like a large history and to ignore duplicates
 
+# History stuff
+# -------------
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
@@ -29,7 +30,14 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
 
-# Configure color preferences
+# Autocomplete stuff
+# -------------
+zstyle ':completion:*' menu select
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+# Configure ls color preferences
 # ===========================
 # The defaults can be hard to see on certain displays. This improves the
 # contrast just a bit.
