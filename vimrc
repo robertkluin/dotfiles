@@ -1,4 +1,3 @@
-
 set nocompatible  " Make Vim more useful.
 
 set modeline      " Use modlines?
@@ -95,9 +94,6 @@ nnoremap ,, ,
 " ; for cmd-mode entry
 nnoremap ; :
 
-" gV to highlight last inserted text
-nnoremap gV `[v`]
-
 " Better buffer explorer.
 nnoremap <C-t> :buffers<CR>:buffer<space>
 
@@ -131,9 +127,6 @@ map <leader>l :set list!<cr>
 " Sort
 map <leader>s :sort<cr>
 
-" Blame
-map <leader>b :Gblame<cr>
-
 "}}}
 
 " insert wd of current file.
@@ -152,12 +145,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'sjl/gundo.vim'
 Plug 'kien/rainbow_parentheses.vim'
-" Plug 'tpope/vim-fugitive.git'
-" Plug 'robertkluin/vim-handy-highlights.git'
+Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
+Plug 'gruvbox-community/gruvbox'
 Plug 'jnurmine/Zenburn'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'andys8/vim-elm-syntax'
 
 call plug#end()
 
@@ -193,137 +185,44 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-"}}}
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
-" Custom File Tweaks {{{
-augroup configroup
-    " Clear all autocmds for this group.
-    autocmd!
-
-    " Tell vim-go to mimic python-mode key bindings
-    autocmd FileType go nmap <C-c>g <Plug>(go-def)
-
-    " mako syntax highlighting
-    autocmd BufRead *.mako set filetype=mako
-
-    " make jinja, jst, and handlebars templates use html syntax highlighting
-    autocmd BufRead *.jinja,*.jst,*.handlebars set filetype=html
-
-    " Set html, coffee, and javascript indent depths to 2-space.
-    autocmd FileType coffee,html,mako setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-    " Set javascript indent depths to 4-space.
-    autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
-
-    " Set haskell and purescript indent depths to 2-space.
-    autocmd FileType haskell,purescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-    " Set cpp and arduino indent depths to 2-space.
-    autocmd FileType cpp,arduino setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-    " Set Markdown preferences
-    autocmd FileType markdown setlocal textwidth=79 spell
-
-    " Flex syntax highlighting
-    autocmd BufRead *.as set filetype=actionscript
-    autocmd BufRead *.mxml set filetype=mxml
-
-    " Remove trailing white-space from python files.
-    autocmd BufWritePre *.py :%s/\s\+$//e
-
-    " Turn spellcheck on for gitcommit by default.
-    autocmd FileType gitcommit set textwidth=72 spell
-augroup END
 "}}}
 
 " Make Colors More Nicer {{{
 
 set background=dark
 set t_Co=256
-"colorscheme desert256
-colorscheme zenburn
 
-" Set background color
-" hi Normal guibg=#cccccc ctermbg=234
-" hi NonText guibg=#cccccc ctermbg=234
-hi Normal ctermbg=235
-hi NonText ctermbg=235
-hi Statement ctermbg=235
-hi Visual ctermbg=60
-hi StatusLine ctermfg=246 ctermbg=234
-hi StatusLineNC ctermfg=238 ctermbg=187
-hi Todo ctermfg=30
-hi Exception ctermfg=187 ctermbg=235
-
-" highlight groups
-hi CursorLine  cterm=NONE ctermbg=236
-hi CursorLineNr  cterm=bold ctermbg=236
-hi CursorColumn  cterm=NONE ctermbg=236
-hi ColorColumn  cterm=NONE ctermbg=232
+colorscheme gruvbox
 
 " Toggle high-contrast mode on/of
-
 function! ToggleContrast()
-    if !exists("t:high_contrast_mode_enabled")
-        echo "  high contrast mode"
-
-        let g:zenburn_high_Contrast = 1
-        let t:high_contrast_mode_enabled = 1
-    else
-        echo "  low contrast mode"
-
-        let g:zenburn_high_Contrast = 0
-        unlet t:high_contrast_mode_enabled
+    if !exists('g:current_contrast')
+        let g:current_contrast = 0
     endif
 
-    colorscheme zenburn
+    if g:current_contrast < 0
+        let g:gruvbox_contrast_dark = 'medium'
+        let g:current_contrast = 0
+        echo "  medium contrast mode"
+    elseif g:current_contrast == 0
+        let g:gruvbox_contrast_dark = 'hard'
+        let g:current_contrast = 1
+        echo "  hard contrast mode"
+    else
+        let g:gruvbox_contrast_dark = 'soft'
+        let g:current_contrast = -1
+        echo "  soft contrast mode"
+    endif
+
+    colorscheme gruvbox
 endfunction
 
 map <leader>h :call ToggleContrast()<cr>
 
 "}}}
 
-
-
-" Make netrw usable as a file explorer
-" Use a tre view
-let g:netrw_liststyle = 3
-
-" <cr> opens in last buffer
-let g:netrw_browse_split = 4
-
-" Vertical splits ftw
-let g:netrw_preview = 1
-let g:netrw_altv = 1
-
-" Default new window size
-let g:netrw_winsize = 10
-
-" Drop the BS up top.
-let g:netrw_banner = 0
-
-" Hide crap that I don't want to see.
-let g:netrw_list_hide= '^\..*$,^.*\.pyc$'
-
-
-
-" I think I'll make <leader>f grep recursive for the word under the cursor in
-" files matching the current file's extension.
-"#nnoremap <leader>f :call GrepToken()<CR>
-
-let g:pygrepprg="grepp\\ -n"
-
-function! PyGrep(args)
-    let grepprg_bak=&grepprg
-    exec "set grepprg=" . g:pygrepprg
-    execute "silent! grep " . a:args
-    botright copen
-    let &grepprg=grepprg_bak
-    exec "redraw!"
-endfunction
-
-
-command! -nargs=* -complete=file G call PyGrep(<q-args>)
 
 function! ScrollToPercent(percent)
     let movelines=winheight(0)*a:percent/100
