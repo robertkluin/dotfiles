@@ -66,6 +66,11 @@ alias grep='grep --color=auto'
 # Helper to clean up dead git branches
 alias clean-branches='~/.dotfiles/helpers/cleanup_branches'
 
+# Make a fancy color theme happen to my shell
+if [ -f "$HOME/.dotfiles/zsh/base16-gruvbox-dark-medium.sh" ]; then
+    . "$HOME/.dotfiles/zsh/base16-gruvbox-dark-medium.sh"
+fi
+
 # Some nice helper functions
 # ==========================
 # These are just a few 
