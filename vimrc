@@ -15,6 +15,8 @@ set hidden        " Buffers remain in memory when not attached.
 set cursorline    " Highlight the line the cursor is on.
 set colorcolumn=80 " Put a bar down column 80.
 
+set signcolumn=yes " It is wildly jarring when this toggles otherwise
+
 " }}}
 
 set backspace=indent,eol,start  " What should BS do?
@@ -178,6 +180,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Map keys for doc helpers
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
+
 " Create mappings for function text object, requires document symbols feature
 " of languageserver.
 xmap if <Plug>(coc-funcobj-i)
@@ -193,6 +198,10 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 set background=dark
 set t_Co=256
+
+
+" Hmmmm. This sucks
+" let g:gruvbox_guisp_fallback = "bg"
 
 colorscheme gruvbox
 
@@ -304,7 +313,7 @@ function! SendTmuxCommands(...)
     for pair in range(0, a:0 - 2, 2)
         let l:target = a:{pair + 1}
         let l:command = a:{pair + 2}
-        exec ":silent !tmux send-keys -t " . l:target . " '" . l:command . "' 'C-m'"
+        exec ":silent !tmux send-keys -t " . l:target . " '" . l:command . "' Enter Enter"
     endfor
     execute ":redraw!"
 endfunction
