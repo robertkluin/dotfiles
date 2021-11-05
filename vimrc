@@ -134,12 +134,6 @@ map <leader>s :sort<cr>
 " insert wd of current file.
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-" set filetype on so we don't return a non-zero exit code due to the next line.
-filetype on
-" filetype being on breaks pathogen
-filetype off
-
-
 " plug.vim {{{
 "
 "
@@ -150,7 +144,6 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'gruvbox-community/gruvbox'
-Plug 'jnurmine/Zenburn'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -159,8 +152,9 @@ call plug#end()
 "}}}
 
 " Enable filetype plugins
-syntax on
 filetype plugin indent on
+syntax on
+set re=0
 
 
 " Fix Silly Plugins {{{
