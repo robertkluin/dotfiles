@@ -71,6 +71,10 @@ if [ -f "$HOME/.dotfiles/zsh/base16-gruvbox-dark-medium.sh" ]; then
     . "$HOME/.dotfiles/zsh/base16-gruvbox-dark-medium.sh"
 fi
 
+
+# Setup GPG prompt for git commit signing
+export GPG_TTY=$(tty)
+
 # Some nice helper functions
 # ==========================
 # These are just a few 
