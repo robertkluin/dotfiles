@@ -88,6 +88,7 @@ tmux-config:
 git-config:
 	ln -sf {$(DOTREPO)/,$(HOME)/.}gitconfig
 	ln -sf {$(DOTREPO)/,$(HOME)/.}gitignore_global
+	ln -sf {$(DOTREPO)/,$(HOME)/.}tigrc
 
 # Mercurial.
 .PHONY: hg-config
