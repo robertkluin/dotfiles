@@ -18,9 +18,11 @@ fi
 
 # History stuff
 # -------------
+HISTFILE=~/tmp/.zsh.history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+setopt appendhistory
 setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
@@ -97,4 +99,7 @@ function grepj () {
 # This is mostly for brew
 export PATH="/usr/local/sbin:$PATH"
 
+
+# Local binaries
+export PATH="$HOME/bin:$PATH"
 
