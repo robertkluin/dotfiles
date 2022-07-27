@@ -42,7 +42,7 @@ set hlsearch       " Highlight search matches.
 " }}}
 
 " How to display assorted non-printing chars
-" set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
 
 set wildmode=longest:full  " Autocomplete longest possible common segment.
 set wildmenu               " Show an auto-complete list.
@@ -156,6 +156,10 @@ filetype plugin indent on
 syntax on
 set re=0
 
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+autocmd BufWrite *.py call CocActionAsync('format')
 
 " Fix Silly Plugins {{{
 
