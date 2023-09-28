@@ -161,6 +161,14 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 autocmd BufWrite *.py call CocActionAsync('format')
 
+" Spell check in git commits
+autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit setlocal complete+=kspell
+
+" Spell check in Markdown files
+autocmd FileType markdown setlocal spell
+autocmd FileType markdown setlocal complete+=kspell
+
 " Fix Silly Plugins {{{
 
 " Tell gundo to prefer python3
