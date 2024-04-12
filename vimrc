@@ -160,6 +160,7 @@ autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 autocmd BufWrite *.py call CocActionAsync('format')
+autocmd FileType python nnoremap <silent> <buffer> <leader>T :sfind test_%:t
 
 " Spell check in git commits
 autocmd FileType gitcommit setlocal spell
