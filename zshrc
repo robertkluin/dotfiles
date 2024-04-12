@@ -82,8 +82,21 @@ export GPG_TTY=$(tty)
 # These are just a few 
 
 function grepp () {
-  echo "Grepping for $@"
-  grep -R --include="*.py" "$@" * ;
+  if (( $# == 0)); then
+    echo "Usage: $0 <search> [<path>]"
+    return 1
+  fi
+
+  local SEARCH_PRED=$1
+
+  if (( $# == 1)); then
+    local SEARCH_PATH=${(f)$(ls)}
+  else
+    local SEARCH_PATH=${=@:2}
+  fi
+
+  echo "Grepping for $SEARCH_PRED in: $SEARCH_PATH"
+  grep -R --include="*.py" $SEARCH_PRED "${=SEARCH_PATH}" ;
 }
 
 function grepe () {
@@ -95,6 +108,7 @@ function grepj () {
   echo "Grepping for $@"
   grep -R --include="*.js" "$@" * ;
 }
+
 
 # This is mostly for brew
 export PATH="/usr/local/sbin:$PATH"
