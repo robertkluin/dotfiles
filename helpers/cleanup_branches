@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# checkout master
-git checkout master
+# checkout main
+git checkout main
 git fetch origin
 
 echo "Pruning origin"
 git remote prune origin
 
 echo "The followin local branches are fully merged and will be removed: "
-git branch --merged master | grep -v 'master$'
+git branch --merged main | grep -v 'main$'
 
 OPTIONS="y Y yes YES"
 
@@ -17,7 +17,7 @@ if [[ $OPTIONS =~ $REPLY ]]
 then
     echo "Trying to remove local branches ..."
     # remove local branches
-    git branch --merged master | grep -v 'master' | xargs git branch -d
+    git branch --merged main | grep -v 'main' | xargs git branch -d
     echo "Local Branches Removed"
 fi
 
