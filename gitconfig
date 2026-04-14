@@ -12,6 +12,11 @@
     status = auto
     branch = auto
 
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    renames = true
+
 [alias]
   st = status
   di = diff
@@ -22,11 +27,19 @@
   an = annotate
 
 [push]
-    default = tracking
+    default = simple
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+    all = true
 
 [merge]
     tool = vimdiff
 
+[rebase]
+    autoStash = true
+    updateRefs = true
 
 [commit]
 	gpgsign = true
